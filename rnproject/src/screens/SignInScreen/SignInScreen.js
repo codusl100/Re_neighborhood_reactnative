@@ -3,31 +3,20 @@ import {View, Text, Image, StyleSheet, useWindowDimensions, ScrollView} from 're
 import Logo from '../../../assets/images/Logo_1.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton'; 
+import SocialSignInButtons from '../../components/SocialSignInButtons';
 
 const SignInScreen = () => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const {height} = useWindowDimensions();
 
     const onSignInPressed = () => {
-        console.warn('Sign in');
+        console.warn('Sign In');
     };
 
     const onForgotPasswordPressed = () => {
         console.warn('onForgotPasswordPressed');
-    };
-
-    const onSignInNaver = () => {
-        console.warn('onSignInNaver');
-    };
-
-    const onSignInGoogle = () => {
-        console.warn('onSignInGoogle');
-    };
-
-    const onSignInKakao = () => {
-        console.warn('onSignInKakao');
     };
 
     const onSignUpPress = () => {
@@ -45,8 +34,8 @@ const SignInScreen = () => {
 
             <CustomInput 
                 placeholder="Email" 
-                value={username} 
-                setValue={setUsername} 
+                value={email} 
+                setValue={setEmail} 
             />
             <CustomInput 
                 placeholder="Password" 
@@ -55,7 +44,7 @@ const SignInScreen = () => {
                 secureTextEntry
             />
 
-            <CustomButton text="LogIn" onPress={onSignInPressed} />
+            <CustomButton text="Sign In" onPress={onSignInPressed} />
 
             <CustomButton 
                 text="Forgot password?" 
@@ -63,24 +52,7 @@ const SignInScreen = () => {
                 type="TERTIARY" 
             />
 
-            <CustomButton 
-                text="Sign In with Naver" 
-                onPress={onSignInNaver}
-                bgColor="#98fb98"
-                fgColor="#2e8b57" 
-            />
-            <CustomButton 
-                text="Sign In with Google" 
-                onPress={onSignInGoogle}
-                bgColor="#FAE9EA"
-                fgColor="#ff7f50" 
-            />
-            <CustomButton 
-                text="Sign In with Kakao" 
-                onPress={onSignInKakao}
-                bgColor="#ffd700"
-                fgColor="#8b4513" 
-            />
+            <SocialSignInButtons />
 
             <CustomButton 
                 text="Don't have an account? Create one" 
