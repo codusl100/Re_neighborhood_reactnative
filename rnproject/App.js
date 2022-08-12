@@ -17,7 +17,7 @@
  const App = () => {
    return (
      <SafeAreaView style={styles.root}>
-       
+       <SignUpScreen />
      </SafeAreaView>
    );
  };

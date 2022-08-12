@@ -44,7 +44,7 @@ const SignInScreen = () => {
                 secureTextEntry
             />
 
-            <CustomButton text="Sign In" onPress={onSignInPressed} />
+            <CustomButton text="Sign In" onPress={() => navigation.navigate('Signup')} />
 
             <CustomButton 
                 text="Forgot password?" 

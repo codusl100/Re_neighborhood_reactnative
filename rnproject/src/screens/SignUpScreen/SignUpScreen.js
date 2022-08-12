@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, useWindowDimensions, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton'; 
 import SocialSignInButtons from '../../components/SocialSignInButtons';
