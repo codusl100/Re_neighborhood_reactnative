@@ -12,6 +12,11 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import SignButtons from '../components/SignButtons';
 import SignForm from '../components/SignForm';
 import {signIn, signUp} from '../lib/auth';
+import {getUser} from '../lib/users';
+import {useUserContext} from '../contexts/UserContext';
+
+
+// 사용자가 존재하는지 확인하고, 존재하지 않는다면 Welcome 화면을 띄우기
 
 function SignInScreen({navigation, route}) {
   const {isSignUp} = route.params ?? {}; // null 병합 연산자
@@ -22,6 +27,7 @@ function SignInScreen({navigation, route}) {
   });
 
   const [loading, setLoading] = useState();
+  const {setUser} = useUserContext();
 
   const createChangeTextHandler = name => value => {
     setForm({...form, [name]: value});
@@ -43,7 +49,12 @@ function SignInScreen({navigation, route}) {
 
     try {
       const {user} = isSignUp ? await signUp(info) : await signIn(info);
-      console.log('[LOG] user : ', user);
+      const profile = await getUser(user.uid);
+      if (!profile) {
+        navigation.navigate('Welcome', {uid: user.uid});
+      } else {
+          setUser(profile);
+      }
     } catch (e) {
       const message = {
         'auth/email-already-in-use': '이미 가입된 이메일입니다.',
@@ -65,7 +76,7 @@ function SignInScreen({navigation, route}) {
       style={styles.KeyboardAvoidingView}
       behavior={Platform.select({ios: 'padding'})}>
       <SafeAreaView style={styles.fullscreen}>
-        <Text style={styles.text}>PublicGallery</Text>
+        <Text style={styles.text}>Re:웃주민</Text>
         <View style={styles.form}>
           <SignForm
             isSignUp={isSignUp}
