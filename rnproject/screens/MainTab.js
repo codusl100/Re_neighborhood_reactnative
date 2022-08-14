@@ -16,7 +16,7 @@ function MainTab() {
           screenOptions={{
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarActiveTintColor: '#6200ee',
+            tabBarActiveTintColor: '#90ee90',
           }}>
           <Tab.Screen
             name="HomeStack"

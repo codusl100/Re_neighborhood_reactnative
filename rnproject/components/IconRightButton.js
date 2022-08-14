@@ -22,7 +22,7 @@ function IconRightButton({name, color, onPress}) {
 }
 
 IconRightButton.defaultProps = {
-  color: '#6200ee',
+  color: '#20b2aa',
 };
 
 const styles = StyleSheet.create({

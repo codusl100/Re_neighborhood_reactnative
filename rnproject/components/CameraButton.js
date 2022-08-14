@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     }),
   },
   circle: {
-    backgroundColor: '#6200ee',
+    backgroundColor: '#228b22',
     borderRadius: 27,
     height: 54,
     width: 54,
