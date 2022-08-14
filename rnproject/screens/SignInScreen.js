@@ -15,7 +15,6 @@ import {signIn, signUp} from '../lib/auth';
 import {getUser} from '../lib/users';
 import {useUserContext} from '../contexts/UserContext';
 
-
 // 사용자가 존재하는지 확인하고, 존재하지 않는다면 Welcome 화면을 띄우기
 
 function SignInScreen({navigation, route}) {
@@ -105,8 +104,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
+    fontFamily: 'SimKyungha',
     fontSize: 32,
     fontWeight: 'bold',
+    color: '#006400'
   },
   form: {
     marginTop: 64,

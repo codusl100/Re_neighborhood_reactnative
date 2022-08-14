@@ -28,11 +28,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 48,
+    color: '#006400',
   },
   description: {
     marginTop: 16,
     fontSize: 21,
-    color: '#757575',
+    color: '#006400',
   },
 });
 
