@@ -27,7 +27,7 @@ function CameraButton() {
   const navigation = useNavigation();
 
   const bottom = Platform.select({
-    android: TABBAR_HEIGHT / 2,
+    android: TABBAR_HEIGHT /2,
     ios: TABBAR_HEIGHT / 2 + insets.bottom - 4,
   });
 

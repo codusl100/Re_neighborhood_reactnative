@@ -1,12 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
 
-function MyProfileScreen() {
+function MyPostScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>This is profile</Text>
+        <Text>This is my postscreen</Text>
     </View>
 );
 }
 
-export default MyProfileScreen;
+export default MyPostScreen;
