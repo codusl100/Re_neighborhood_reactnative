@@ -36,7 +36,7 @@ function CameraButton() {
       return;
     }
     console.log(res);
-    navigation.push('Upload', {res});
+    navigation.push('Check', {res});
   };
 
   const onLaunchCamera = () => {

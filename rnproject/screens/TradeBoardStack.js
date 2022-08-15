@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import FeedScreen from './FeedScreen';
+import FeedListScreen from './FeedListScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ChairScreen from './category/ChairScreen';
 import SofaScreen from './category/SofaScreen';
@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 function TradeBoardStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="FeedList" component={FeedScreen} />
+      <Stack.Screen name="FeedList" component={FeedListScreen} />
       <Drawer.Navigator>
             <Drawer.Screen name="Sofa" component={SofaScreen} />
             <Drawer.Screen name="Chair" component={ChairScreen} />

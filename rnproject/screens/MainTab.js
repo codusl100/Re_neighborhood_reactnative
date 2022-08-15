@@ -21,16 +21,12 @@ const HomeScreen = ({ navigation, route }) => {
     const insets = useSafeAreaInsets();
     const [modalVisible, setModalVisible] = useState(false);
 
-    const bottom = Platform.select({
-        android: TABBAR_HEIGHT /2,
-    });
-
     const onPickImage = res => {
         if (res.didCancle || !res) {
         return;
         }
         console.log(res);
-        navigation.push('Upload', {res});
+        navigation.push('Check', {res});
     };
 
     const onLaunchCamera = () => {
@@ -94,49 +90,15 @@ const Stack = createNativeStackNavigator();
 
 function MainTab() {
   return (
-<<<<<<< HEAD
             <Stack.Navigator>
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Camera" component={CameraButton} />
                 <Stack.Screen name="Trade" component={TradeBoardStack} />
                 <Stack.Screen name="Profile" component={MyProfileStack} />
             </Stack.Navigator>
-    );
+    )
 };
-=======
-    <>
-      <View style={styles.block}>
-        <Tab.Navigator
-          screenOptions={{
-            headerShown: false,
-            tabBarShowLabel: false,
-            tabBarActiveTintColor: '#90ee90',
-          }}>
-          <Tab.Screen
-            name="HomeStack"
-            component={HomeStack}
-            options={{
-              tabBarIcon: ({color}) => (
-                <Icon name="home" size={24} color={color} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="MyProfileStack"
-            component={MyProfileStack}
-            options={{
-              tabBarIcon: ({color}) => (
-                <Icon name="person" size={24} color={color} />
-              ),
-            }}
-          />
-        </Tab.Navigator>
-      </View>
-      <CameraButton />
-    </>
-  );
-}
->>>>>>> f2e1a0a95d6fa09b28cb8156189dd7b8b17fe5ef
+   
 
 export default MainTab;
 
